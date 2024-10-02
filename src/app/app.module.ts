@@ -4,6 +4,8 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { PageModule } from "./page/page.module";
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -11,8 +13,10 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
-  ],
+    AppRoutingModule,
+    PageModule,
+    AuthModule
+],
   providers: [
     provideClientHydration(),
     provideAnimationsAsync()

@@ -16,6 +16,7 @@ import { FooterComponent } from './components/footer/footer.component';
   imports: [
     CommonModule,
     PageRoutingModule
-  ]
+  ],
+  exports:[HeaderComponent,FooterComponent]
 })
 export class PageModule { }
