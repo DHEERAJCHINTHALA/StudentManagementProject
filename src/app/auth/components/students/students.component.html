@@ -1,0 +1,40 @@
+<div class="container-fluid">
+  <div class="container">
+    <div class="row">
+      <div class="col-3">
+        <form [formGroup]="MyForm">
+          <dd>Country</dd>
+          <dd>
+            <select #eval (change)="countrychange(eval.value)" formControlName="Country">
+              <option>-select-</option>
+              <ng-container *ngFor="let DATA of country">
+                <option [value]="DATA.CountryId">{{ DATA.Name }}</option>
+              </ng-container>
+            </select>
+            <div *ngIf="MyForm.controls.Country.errors?.invalidSelection && MyForm.controls.Country.touched">
+              <small class="text-danger">Please select a valid country</small>
+            </div>
+          </dd>
+
+          <dd>States</dd>
+          <dd>
+            <select formControlName="States">
+              <option>-select-</option>
+              <ng-container *ngFor="let stdata of states">
+                <option [value]="stdata.StatesId">{{ stdata.Name }}</option>
+              </ng-container>
+            </select>
+            <div *ngIf="MyForm.controls.States.errors?.invalidSelection && MyForm.controls.States.touched">
+              <small class="text-danger">Please select a valid state</small>
+            </div>
+          </dd>
+
+          <!-- Submit button will only be shown if the form is valid -->
+          <dd *ngIf="MyForm.valid">
+            <button (click)="formsubmit(MyForm.value)">Submit</button>
+          </dd>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

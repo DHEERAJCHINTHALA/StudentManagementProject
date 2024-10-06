@@ -1,5 +1,12 @@
-<app-header></app-header>
- <div class="container-content">
-    <router-outlet></router-outlet>
- </div>
-<app-footer></app-footer>
+<ng-container *ngIf="HeaderAndFooter">
+  <app-header></app-header>
+</ng-container>
+
+<div class="cursor" #cursor></div>
+<div class="container-content">
+  <router-outlet></router-outlet>
+</div>
+
+<ng-container *ngIf="HeaderAndFooter">
+  <app-footer></app-footer>
+</ng-container>

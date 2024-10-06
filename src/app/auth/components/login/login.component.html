@@ -1,1 +1,60 @@
-<p>login works!</p>
+<style>
+  input[type="text"],
+  input[type="password"] {
+    padding-left: 10px;
+    width: 209px;
+  }
+  .container {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 10px;
+    color: rgb(255, 255, 255);
+  }
+  .login-content {
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.23);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.6px);
+    -webkit-backdrop-filter: blur(7.6px);
+    border: 1px solid rgba(255, 255, 255, 0.61);
+    /* background-color: lightblue; */
+    padding: 50px;
+    /* box-shadow: 0px 0px 7px 5px #ffffff; */
+  }
+  h4 {
+    text-align: center;
+    justify-content: center;
+  }
+  .container-fluid {
+    background: radial-gradient(circle, rgb(69 133 162) 0%, rgb(17 53 98) 100%);
+  }
+</style>
+
+<div class="container-fluid">
+  <div class="container">
+    <div class="login-content">
+      <form [formGroup]="MyForm">
+        <h4><b>LOGIN</b></h4>
+        <dd>username</dd>
+        <dd>
+          <input type="text" formControlName="Username" />
+        </dd>
+        <dd>password</dd>
+        <dd>
+          <input type="password" name="" id="" formControlName="Password" />
+        </dd>
+        <dd><input type="checkbox" /> Show the password</dd>
+        <dd>
+          <button
+            class="w-100 btn btn-danger"
+            (click)="formSubmit(MyForm.value)"
+          >
+            Login
+          </button>
+        </dd>
+      </form>
+    </div>
+  </div>
+</div>
